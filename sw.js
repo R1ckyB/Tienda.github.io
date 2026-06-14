@@ -4,10 +4,10 @@
 
 const CACHE_NAME = 'dona-marian-v1';
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.svg'
+  './',
+  'index.html',
+  'manifest.json',
+  'favicon.svg'
 ];
 
 // Install — cache static assets
@@ -67,7 +67,7 @@ self.addEventListener('fetch', (event) => {
       })
       .catch(() => {
         return caches.match(event.request).then((cached) => {
-          return cached || caches.match('/index.html');
+          return cached || caches.match('index.html');
         });
       })
   );
